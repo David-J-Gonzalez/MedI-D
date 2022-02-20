@@ -60,6 +60,12 @@ public class Flow {
         System.out.printf("Physician Name: ");
         sc.nextLine();
         physician = sc.nextLine();
+        String data = "INSERT INTO user_info (first_name, last_name, socialSec, birthday, gender, race, marStat, " +
+                "ethnicity, fullAdr, lang, phone, email, bloodType, needInterp, impaired, physician) " +
+                "VALUES ('" + firstName + "', '" + lastName + "', '" + socialSec + "', '"+ birthday +"', '" + gender + "', '" + race +
+                "', '" + marStat + "', '" + ethnicity + "', '" + fullAdr + "', '" + lang + "', '" + phone + "', '" + email + "', '" + bloodType +
+                "', '" + needInterp + "', '" + impaired + "', '" + physician + "');";
+        Database.insertData(data);
     }
 
     public void work() {
