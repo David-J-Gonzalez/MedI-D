@@ -100,7 +100,6 @@ public class Flow {
         System.out.printf("SECTION 5 : INSURANCE\n");
         System.out.printf("Primary Insurance Company: ");
         primaryInsur = sc.nextLine();
-        sc.nextLine();
         System.out.printf("Policy Holder First_Name Last_Name: ");
         phFirst = sc.next();
         phLast = sc.next();
