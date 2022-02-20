@@ -29,7 +29,7 @@ public class Flow {
         lastName = sc.next();
         System.out.printf("SSN: ");
         socialSec = sc.next();
-        System.out.printf("Birthdate, mm/dd/yyyy: ");
+        System.out.printf("Date of Birth, mm/dd/yyyy: ");
         birthday = sc.next();
         System.out.printf("Gender: ");
         gender = sc.next();
@@ -40,7 +40,7 @@ public class Flow {
         System.out.printf("Ethnicity: ");
         ethnicity = sc.next();
         sc.nextLine();
-        System.out.printf("Full Address, Street, City, State Zip: ");
+        System.out.printf("Full Address 'Street City State Zip': ");
         fullAdr = sc.nextLine();
         System.out.printf("Languages: ");
         lang = sc.nextLine();
@@ -74,7 +74,7 @@ public class Flow {
         System.out.printf("Business Number, (555) 555-5555: ");
         businessNumber = sc.next();
         sc.nextLine();
-        System.out.printf("Employer Address, Street, City, State Zip: ");
+        System.out.printf("Employer Address 'Street City State Zip': ");
         employerAddress = sc.nextLine();
     }
 
