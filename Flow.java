@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Flow {
@@ -14,13 +15,13 @@ public class Flow {
             return true;
         } else {
             return false;
-        }   
+        }
     }
 
     public void basicInfo() {
         String firstName, lastName, socialSec, birthday, gender, race, marStat, ethnicity, fullAdr,
-        lang, phone, email, bloodType, needInterp, impaired, physician;
-        
+                lang, phone, email, bloodType, needInterp, impaired, physician;
+
         System.out.printf("Great, lets get started!\n");
         System.out.printf("--------------------------------------------------------\n");
         System.out.printf("SECTION 1 : BASIC INFORMATION\n");
@@ -131,7 +132,7 @@ public class Flow {
         System.out.printf("Policy Holder Date of Birth, mm/dd/yyyy: ");
         dateOB = sc.nextLine();
         String data = "INSERT INTO insur_info (insurance_company, first_name, last_name, relationship, sub_id, group_no, ssn, dob) " +
-        "VALUES ('" + primaryInsur + "', '" + phFirst + "', '" + phLast + "', '" + relation + "', '" + subID + "', '" + groupNumb + "', '" + socSec + "', '" + dateOB + "');";
+                "VALUES ('" + primaryInsur + "', '" + phFirst + "', '" + phLast + "', '" + relation + "', '" + subID + "', '" + groupNumb + "', '" + socSec + "', '" + dateOB + "');";
         Database.insertData(data);
     }
 
@@ -166,12 +167,24 @@ public class Flow {
             System.out.printf("What is it?: ");
             otherIll = sc.next();
         }
-        //String majorSurgHosp[] = {"Appendectomy", "Coronary Artery Bypass (Open Heart)", "Cholecystemectomy", "Bariatric Type:", "Hysterectomy", "Mastextomy", "Nephrectomy", "Splenectomy", " Tonsillectomy/Adenoidectomy", "Other Surgeries". "Other Hospitalizations"};
-        //another hashset maybe? ask them each one one by one like "Have you ever had a [whatever indice of the surgery]" prompt a yes or no put yes in a set and move until array ends. For others if other is yes prompt for a systme input of what type//
+        String s[] = {"Appendectomy", "Coronary Artery Bypass (Open Heart)", "Cholecystemectomy", "Bariatric Type:", "Hysterectomy", "Mastextomy", "Nephrectomy", "Splenectomy", " Tonsillectomy/Adenoidectomy", "Other Surgeries", "Other Hospitalizations"};
+        ArrayList<String> res = new ArrayList<>();
+        System.out.printf("For the following type y or n as your response.\n");
+        for (int i =0; i <s.length; i++) {
+            System.out.printf(s[i]);
+            if (sc.next().equals("y")){
+                res.add(s[i]);
+        }
+            String hospit = "";
+            for(String j:res) {
+                hospit += j + " ";
+            }
+
+        }
         //String familyMed[] = {"Alcoholism", "Anemia", "Asthma", "Blood Disorder", "Cancer Type", "Stroke", "Dementia", "Diabetes", "Heart Disease", "High Cholesterol", "High Blood Pressure", "Kidney Disease", "Mental Illness", "Osteoporosis", "Heart Attack <50 years of age", "Seizures/Epilepsy", "Thyroid Problems", "Other:"};
 
 
-        
+
     }
 
     public void closeScanner(){
