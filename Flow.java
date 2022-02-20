@@ -156,6 +156,19 @@ public class Flow {
             cancerTreatment = sc.next();
             sc.nextLine();
         }
+        String s[] = {"Addiction", "Anemia", "Anxiety", "Arhtritis/Gout", "Asthma", "Bipolar", "Colon Disease", "Congestive Heart Failure", "COPD/Emphysema", "Dementia", "Depression", "Diabetes", "Enlarged Prostate", "Reflux/GERD", "Blood Clot", " Heart Attack", "Hepatitis A", "Hepatitis B", "Hepatitis C", "Hepatitis D", "Hepatitis E", "High Cholesterol", "High Blood Pressure", "Irritable Bowel Syndrome", "Kidney Disease", "Kidney Stones", "Liver Disease", "Migraines", "Osteoporosis", "Parkinson's Disease", "Pulmonary Embolism", "Schizophrenia", "Skin Disease", "Stroke", "Thyroid Disease"};
+        ArrayList<String> red = new ArrayList<>();
+        System.out.printf("For the following conditions type 'y' or 'n' as your response: \n");
+        for (int i=0;i<s.length;i++) {
+            System.out.printf(s[i]);
+            if (sc.next().toLowerCase().equals("y")){
+                red.add(s[i]);
+            }
+                String conditions = "";
+                for(String j:red) {
+                    conditions += j + " ";
+                }
+        }
         System.out.printf("Have you been diagnosed with a Mental Illness?: ");
         if(sc.next().toLowerCase().equals("yes")){
             System.out.printf("What Type: ");
