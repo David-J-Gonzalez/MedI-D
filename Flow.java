@@ -137,7 +137,7 @@ public class Flow {
     }
 
     public void medicalHistory(){
-        String poaFirst, poaLast, doNR, cancerTreatment, mentalIll, otherIll;
+        String poaFirst, poaLast, doNR, cancerTreatment, mentalIll, otherIll, meds;
         //String conditions[] = {"Addiction", "Anemia", "Anxiety", "Arhtritis/Gout", "Asthma", "Bipolar", "Colon Disease", "Congestive Heart Failure", "COPD/Emphysema", "Dementia", "Depression", "Diabetes", "Enlarged Prostate", "Reflux/GERD", "Blood Clot", " Heart Attack", "Hepatitis A", "Hepatitis B", "Hepatitis C", "Hepatitis D", "Hepatitis E", "High Cholesterol", "High Blood Pressure", "Irritable Bowel Syndrome", "Kidney Disease", "Kidney Stones", "Liver Disease", "Migraines", "Osteoporosis", "Parkinson's Disease", "Pulmonary Embolism", "Schizophrenia", "Skin Disease", "Stroke", "Thyroid Disease"};
         //move along array ask "Does [indice of condition] apply to you?" save yes values in set and pull them later for data collection?//
         System.out.printf("--------------------------------------------------------\n");
@@ -194,11 +194,45 @@ public class Flow {
             }
 
         }
-        //String familyMed[] = {"Alcoholism", "Anemia", "Asthma", "Blood Disorder", "Cancer Type", "Stroke", "Dementia", "Diabetes", "Heart Disease", "High Cholesterol", "High Blood Pressure", "Kidney Disease", "Mental Illness", "Osteoporosis", "Heart Attack <50 years of age", "Seizures/Epilepsy", "Thyroid Problems", "Other:"};
-
-
+        String familyHist[] = {"Alcoholism", "Anemia", "Asthma", "Blood Disorder", "Cancer Type", "Stroke", "Dementia", "Diabetes", "Heart Disease", "High Cholesterol", "High Blood Pressure", "Kidney Disease", "Mental Illness", "Osteoporosis", "Heart Attack <50 years of age", "Seizures/Epilepsy", "Thyroid Problems", "Other:"};
+        ArrayList<String> ret = new ArrayList<>();
+        System.out.printf("If a Family member has these following conditions type y or n as your response.\n");
+        for (int i =0; i <s.length; i++) {
+            System.out.printf(s[i]);
+            if (sc.next().equals("y")){
+                ret.add(s[i]);
+        }
+            String famhist = "";
+            for(String j:ret) {
+                famhist += j + " ";
+            }
+        }
+        System.out.printf("What Medications Are you Currently Taking, 'Med1 Med2 ...': ");
+        meds = sc.nextLine();
+        String allergies = Allergies();
 
     }
+
+    public static String Allergies() {
+        String aller = "";
+        System.out.printf("Do you have unlisted allergy?, 'Allergy-Severity-Reaction': ");
+        if (sc.next().toLowerCase().equals("yes")) {
+            aller = sc.nextLine();
+            while (true) {
+                System.out.printf("Do you have unlisted allergy?, 'Allergy-Severity-Reaction': ");
+                if (sc.next().toLowerCase().equals("yes")) {
+                    aller += sc.nextLine();
+                } else {
+                    break;
+                }
+            }
+            return aller;
+        } else return "none";
+    }
+    poaFirst, poaLast, doNR, cancerTreatment, mentalIll, otherIll, meds
+        String data = "INSERT INTO med_hist (first_name, last_name, dnr, cancer, conditions, mental, other, major_hs, fam_hist, meds, allergies) " +
+        "VALUES ('" + poaFirst + "', '" + poaLast + "', '" + doNR + "', '" + cancerTreatment + "', '" + conditions + "', '" + mentalIll + "', '" + otherIll + "', '" + hospit + "', '" +  famhist + "', '" + meds + "', '" +  aller + "');";
+        Database.insertData(data);
 
     public void closeScanner(){
         sc.close();
