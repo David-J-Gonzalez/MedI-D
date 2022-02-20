@@ -56,7 +56,9 @@ public class Flow {
         if(sc.next().toLowerCase().equals("yes")){
             System.out.printf("Hearing or Visual: ");
             impaired = sc.next();
-        } 
+        } else {
+            impaired = "none";
+        }
         System.out.printf("Physician Name: ");
         sc.nextLine();
         physician = sc.nextLine();
@@ -94,6 +96,8 @@ public class Flow {
         System.out.printf("Emergency Contact(EC) First_Name Last_Name: ");
         firstName = sc.next();
         lastName = sc.next();
+        System.output.printf("Relationship: ");
+        relationship = sc.next();
         System.out.printf("EC's Home Number, (555) 555-5555: ");
         homeNumb = sc.nextLine();
         sc.nextLine();
@@ -101,7 +105,7 @@ public class Flow {
         workNumb = sc.nextLine();
         System.out.printf("EC's Cell Number, (555) 555-5555: ");
         cellNumb = sc.nextLine();
-        String data = "INSERT INTO emergency_contact_info (first_name, last_name, relationship, home, work, cell) " +
+        String data = "INSERT INTO ec_info (first_name, last_name, relationship, home, work, cell) " +
                 "VALUES ('" + firstName + "', '" + lastName + "', '" + relationship + "', '" + homeNumb + "', '" + workNumb + "', '" + cellNumb + "');";
         Database.insertData(data);
     }
@@ -126,7 +130,7 @@ public class Flow {
         sc.nextLine();
         System.out.printf("Policy Holder Date of Birth, mm/dd/yyyy: ");
         dateOB = sc.nextLine();
-        String data = "INSERT INTO insurance_info (insurance_company, first_name, last_name, relationship, subscriber_id, group, ssn, dob) " +
+        String data = "INSERT INTO insur_info (insurance_company, first_name, last_name, relationship, sub_id, group_no, ssn, dob) " +
         "VALUES ('" + primaryInsur + "', '" + phFirst + "', '" + phLast + "', '" + relation + "', '" + subID + "', '" + groupNumb + "', '" + socSec + "', '" + dateOB + "');";
         Database.insertData(data);
     }
