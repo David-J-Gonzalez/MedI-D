@@ -82,6 +82,9 @@ public class Flow {
         sc.nextLine();
         System.out.printf("Employer Address 'Street City State Zip': ");
         employerAddress = sc.nextLine();
+        String data = "INSERT INTO work_info (employer, occupation, business_number, employer_address) " +
+                "VALUES ('" + employer + "', '" + occupation + "', '" + businessNumber + "', '"+ employerAddress +  "');";
+        Database.insertData(data);
     }
 
     public void emergencyContact() {
@@ -98,6 +101,9 @@ public class Flow {
         workNumb = sc.nextLine();
         System.out.printf("EC's Cell Number, (555) 555-5555: ");
         cellNumb = sc.nextLine();
+        String data = "INSERT INTO emergency_contact_info (first_name, last_name, relationship, home, work, cell) " +
+                "VALUES ('" + firstName + "', '" + lastName + "', '" + relationship + "', '" + homeNumb + "', '" + workNumb + "', '" + cellNumb + "');";
+        Database.insertData(data);
     }
 
     public void insurance(){
@@ -120,6 +126,9 @@ public class Flow {
         sc.nextLine();
         System.out.printf("Policy Holder Date of Birth, mm/dd/yyyy: ");
         dateOB = sc.nextLine();
+        String data = "INSERT INTO insurance_info (insurance_company, first_name, last_name, relationship, subscriber_id, group, ssn, dob) " +
+        "VALUES ('" + primaryInsur + "', '" + phFirst + "', '" + phLast + "', '" + relation + "', '" + subID + "', '" + groupNumb + "', '" + socSec + "', '" + dateOB + "');";
+        Database.insertData(data);
     }
 
     public void medicalHistory(){
