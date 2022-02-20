@@ -96,7 +96,7 @@ public class Flow {
         System.out.printf("Emergency Contact(EC) First_Name Last_Name: ");
         firstName = sc.next();
         lastName = sc.next();
-        System.output.printf("Relationship: ");
+        System.out.printf("Relationship: ");
         relationship = sc.next();
         System.out.printf("EC's Home Number, (555) 555-5555: ");
         homeNumb = sc.nextLine();
