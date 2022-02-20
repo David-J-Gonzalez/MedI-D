@@ -1,5 +1,5 @@
 # MedI-D
-David Gonzalez Kai Fang
+David Gonzalez, Kai Fang
 
 ## Inspiration
 Ever since the start of the COVID-19 pandemic, the flaws and inefficiencies within the healthcare system have become glaringly obvious.  Exacerbated by increasing retirement rates of healthcare professionals, poor working conditions due to the pandemic, as well as professional burnout, the need for an optimized patient registration process to offload work on the providers has greatly increased. As a result of this, the MedI-D turned our focus to digitizing and centralizing personal medical information into one application that streamlines the process and compiles user medical information into one location that is easily accessible. 
